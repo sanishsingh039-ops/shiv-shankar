@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मेरा पर्सनल डैशबोर्ड</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .app-container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #054432, #0b664a);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .ratio-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: #eef7f4;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #c2e2d7;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #eaeaea;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .card h4 { margin: 0; color: #666; font-size: 14px; }
+        .card p { margin: 5px 0 0 0; font-size: 18px; font-weight: bold; color: #333; }
+        .btn-bind {
+            display: block;
+            background: #00b074;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- हेडर -->
+    <div class="header">
+        <h2>पेमेंट रिवॉर्ड्स</h2>
+        <p>अपने पर्सनल एकाउंट्स को ट्रैक करें</p>
+    </div>
+
+    <!-- एक्सचेंज रेट / रेश्यो -->
+    <div class="ratio-section">
+        <div>
+            <strong>USDT Ratio</strong>
+            <div id="usdt-rate">1 USDT ≈ 109 INR</div>
+        </div>
+        <div style="text-align: right;">
+            <strong>INR बोनस</strong>
+            <div style="color: #00b074; font-weight: bold;">4% + 6</div>
+        </div>
+    </div>
+
+    <!-- UPI बटन -->
+    <a href="#" class="btn-bind" onclick="bindUPI()">UPI लिंक करें</a>
+
+    <!-- डैशबोर्ड ग्रिड (डेटा दिखाने के लिए) -->
+    <div class="grid-container">
+        <div class="card">
+            <h4>कुल बैलेंस</h4>
+            <p id="balance">₹ 410.55</p>
+        </div>
+        <div class="card">
+            <h4>आज का विड्रॉल</h4>
+            <p>₹ 0.00</p>
+        </div>
+        <div class="card">paysunny
+            <h4>आज की कमाई</h4>
+            <p id="earnings">₹ 0.00</p>
+        </div>
+        <div class="card">
+            <h4>टोटल बोनस</h4>
+            <p style="color: #00b074;">₹ 400.00</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // बटन पर क्लिक करने पर काम करने वाला बेसिक फंक्शन
+    function bindUPI() {
+        let upi = prompt("अपना UPI ID डालें (जैसे: example@apl):");
+        if(upi) {
+            alert("UPI ID " + upi + " सफलतापूर्वक लिंक हो गया है!");
+        }
+    }
+</script>
+
+</body>
+</html>
